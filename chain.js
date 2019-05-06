@@ -6,22 +6,18 @@ const uniqBy = require("./uniqBy.js");
 module.exports = function chain (value) {
     let val = value;
 
+    function wrap (fn) {
+        return (...args) => {
+            val = fn(val, ...args);
+            return result;
+        };
+    }
+
     let result = {
-        get: (...args) => {
-            val = get(val, ...args);
-            return result;
-        },
-        groupBy: (...args) => {
-            val = groupBy(val, ...args);
-            return result;
-        },
-        pick: (...args) => {
-            val = pick(val, ...args);
-        },
-        uniqBy: (...args) => {
-            val = uniqBy(val, ...args);
-            return result;
-        },
+        get: wrap(get),
+        groupBy: wrap(groupBy),
+        pick: wrap(pick),
+        uniqBy: wrap(uniqBy),
         invoke: (fn, ...args) => {
             val = fn(...args);
             return result;
