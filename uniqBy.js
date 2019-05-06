@@ -1,4 +1,4 @@
-module.exports = function uniqBy (arr, iteratee = a => a) {
+module.exports = function uniqBy (arr, iteratee = val => val) {
     if (!Array.isArray(arr)) {
         return [];
     }

@@ -1,3 +1,3 @@
-module.exports = function isNullOrUndefined (a) {
-    return a == null;
+module.exports = function isNullOrUndefined (value) {
+    return value == null;
 };
