@@ -1,6 +1,6 @@
-import isNullOrUndefined from "./isNullOrUndefined.js";
+const isNullOrUndefined = require("./isNullOrUndefined.js");
 
-export default function get (obj, path, defaultValue) {
+module.exports = function get (obj, path, defaultValue) {
     if (isNullOrUndefined(obj)) {
         return defaultValue;
     }
@@ -22,4 +22,4 @@ export default function get (obj, path, defaultValue) {
     }
 
     return void 0 === obj ? defaultValue : obj;
-}
+};

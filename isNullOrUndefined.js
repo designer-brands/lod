@@ -1,3 +1,3 @@
-export default function isNullOrUndefined (a) {
+module.exports = function isNullOrUndefined (a) {
     return a == null;
-}
+};

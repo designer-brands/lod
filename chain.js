@@ -1,9 +1,9 @@
-import get from "./get.js";
-import groupBy from "./groupBy.js";
-import pick from "./pick.js";
-import uniqBy from "./uniqBy.js";
+const get = require("./get.js");
+const groupBy = require("./groupBy.js");
+const pick = require("./pick.js");
+const uniqBy = require("./uniqBy.js");
 
-export default function chain (value) {
+module.exports = function chain (value) {
     let val = value;
 
     let result = {
@@ -30,4 +30,4 @@ export default function chain (value) {
     }
 
     return result;
-}
+};

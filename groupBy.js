@@ -1,4 +1,4 @@
-export default function groupBy (arr, iteratee = a => a) {
+module.exports = function groupBy (arr, iteratee = a => a) {
     if (!Array.isArray(arr)) {
         return [];
     }
@@ -14,4 +14,4 @@ export default function groupBy (arr, iteratee = a => a) {
 
         return acc;
     }, {});
-}
+};

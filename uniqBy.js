@@ -1,4 +1,4 @@
-export default function uniqBy (arr, iteratee = a => a) {
+module.exports = function uniqBy (arr, iteratee = a => a) {
     if (!Array.isArray(arr)) {
         return [];
     }
@@ -12,4 +12,4 @@ export default function uniqBy (arr, iteratee = a => a) {
 
         return acc;
     }, []);
-}
+};

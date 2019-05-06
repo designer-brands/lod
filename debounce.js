@@ -1,4 +1,4 @@
-export default function debounce (fn, wait) {
+module.exports = function debounce (fn, wait) {
     if (typeof wait !== "number" || !isFinite(wait)) {
         wait = 100;
     }
@@ -15,4 +15,4 @@ export default function debounce (fn, wait) {
             timeout = null;
         }, wait, ...arguments);
     }
-}
+};
