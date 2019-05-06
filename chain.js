@@ -7,19 +7,19 @@ module.exports = function chain (value) {
     let val = value;
 
     let result = {
-        get: () => {
-            val = get(val, ...arguments);
+        get: (...args) => {
+            val = get(val, ...args);
             return result;
         },
-        groupBy: () => {
-            val = groupBy(val, ...arguments);
+        groupBy: (...args) => {
+            val = groupBy(val, ...args);
             return result;
         },
-        pick: () => {
-            val = pick(val, ...arguments);
+        pick: (...args) => {
+            val = pick(val, ...args);
         },
-        uniqBy: () => {
-            val = uniqBy(val, ...arguments);
+        uniqBy: (...args) => {
+            val = uniqBy(val, ...args);
             return result;
         },
         invoke: (fn, ...args) => {
