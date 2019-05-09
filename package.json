@@ -1,0 +1,19 @@
+{
+  "name": "lod",
+  "version": "1.0.0",
+  "description": "lod",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/jl442741/lod.git"
+  },
+  "keywords": [
+    "lod"
+  ],
+  "author": "Jason",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jl442741/lod#readme"
+}
