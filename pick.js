@@ -1,7 +1,7 @@
-import get from "./get.js";
-import isNonEmptyObject from "./isNonEmptyObject.js";
+const get = require("./get.js");
+const isNonEmptyObject = require("./isNonEmptyObject.js");
 
-export default function pick (obj, ...paths) {
+module.exports = function pick (obj, ...paths) {
     if (!isNonEmptyObject(obj)) {
         return {};
     }
@@ -15,4 +15,4 @@ export default function pick (obj, ...paths) {
     });
 
     return result;
-}
+};

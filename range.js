@@ -1,4 +1,4 @@
-export default function range (start, end, step) {
+module.exports = function range (start, end, step) {
     // every arg must be a finite number
     let isEveryArgFinite = [...arguments].every(
         arg => ("number" === typeof arg) && isFinite(arg)
@@ -33,4 +33,4 @@ export default function range (start, end, step) {
     }
 
     return result;
-}
+};

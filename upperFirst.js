@@ -1,4 +1,4 @@
-export default function upperFirst (str) {
+module.exports = function upperFirst (str) {
     if ("string" !== typeof str) {
         return "";
     }

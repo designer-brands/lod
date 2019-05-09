@@ -1,27 +1,23 @@
-import get from "./get.js";
-import groupBy from "./groupBy.js";
-import pick from "./pick.js";
-import uniqBy from "./uniqBy.js";
+const get = require("./get.js");
+const groupBy = require("./groupBy.js");
+const pick = require("./pick.js");
+const uniqBy = require("./uniqBy.js");
 
-export default function chain (value) {
+module.exports = function chain (value) {
     let val = value;
 
+    function wrap (fn) {
+        return (...args) => {
+            val = fn(val, ...args);
+            return result;
+        };
+    }
+
     let result = {
-        get: () => {
-            val = get(val, ...arguments);
-            return result;
-        },
-        groupBy: () => {
-            val = groupBy(val, ...arguments);
-            return result;
-        },
-        pick: () => {
-            val = pick(val, ...arguments);
-        },
-        uniqBy: () => {
-            val = uniqBy(val, ...arguments);
-            return result;
-        },
+        get: wrap(get),
+        groupBy: wrap(groupBy),
+        pick: wrap(pick),
+        uniqBy: wrap(uniqBy),
         invoke: (fn, ...args) => {
             val = fn(...args);
             return result;
@@ -30,4 +26,4 @@ export default function chain (value) {
     }
 
     return result;
-}
+};
