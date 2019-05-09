@@ -1,0 +1,24 @@
+{
+  "name": "lod",
+  "version": "1.0.0",
+  "description": "lod",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/jl442741/lod.git"
+  },
+  "keywords": [
+    "lod"
+  ],
+  "author": "Jason",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jl442741/lod#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.4.0"
+  }
+}
