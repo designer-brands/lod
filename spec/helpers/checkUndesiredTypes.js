@@ -27,7 +27,7 @@ module.exports = function checkUndesiredTypes (options) {
     Object.entries(types).forEach(([type, values] = entry) => {
         if (!options.desiredTypes.includes(type)) {
             values.forEach(value => {
-                describe(`when argument is ${value}`, function () {
+                describe(`when argument is ${JSON.stringify(value)}`, function () {
                     it(`should return ${options.expectedValue}`, function () {
                         expect(options.fn(value)).toEqual(options.expectedValue);
                     });
