@@ -1,5 +1,5 @@
 const isNullOrUndefined = require("./isNullOrUndefined.js");
 
 module.exports = function isNonEmptyObject (obj) {
-    return (obj instanceof Object) && Object.keys(obj).length;
+    return (obj instanceof Object) && (!Array.isArray(obj)) && Object.keys(obj).length;
 };
