@@ -6,6 +6,7 @@
  * @param {String} options.expectedValue Expected value for the undesired types.
  * 
  */
+/* istanbul ignore next */
 beforeAll(function () {
     this.checkUndesiredTypes = function checkUndesiredTypes (options) {
         const types = {
