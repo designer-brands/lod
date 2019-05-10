@@ -9,7 +9,7 @@ describe("isNullOrUndefined", function() {
                 expectedValue: false
             });
 
-            expect(errors).toBe(false);
+            expect(errors).toBe("");
         });
     });
     

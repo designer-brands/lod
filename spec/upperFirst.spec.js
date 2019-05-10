@@ -9,7 +9,7 @@ describe("upperFirst", function() {
                 expectedValue: ""
             });
 
-            expect(errors).toBe(false);
+            expect(errors).toBe("");
         });
     });
 

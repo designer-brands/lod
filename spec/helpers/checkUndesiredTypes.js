@@ -52,10 +52,10 @@ beforeAll(function () {
 
         // no error
         if (0 === Object.keys(errors).length) {
-            return false;
+            return "";
         // has error
         } else {
-            return "these values of undesired types have errors: " + Json.stringify(result);
+            return "these values of undesired types have errors: " + JSON.stringify(errors);
         }
     };
 });
