@@ -1,15 +1,18 @@
 const upperFirst = require("../src/upperFirst.js");
-const checkUndesiredTypes = require("./helpers/checkUndesiredTypes.js");
 
 describe("upperFirst", function() {
     describe("called with non-string types", function () {
-        checkUndesiredTypes({
-            desiredTypes: ["string"],
-            fn: upperFirst,
-            expectedValue: ""
+        it("should have no errors", function () {
+            let errors = this.checkUndesiredTypes({
+                desiredTypes: ["string"],
+                fn: upperFirst,
+                expectedValue: ""
+            });
+
+            expect(errors).toBe(false);
         });
     });
-    
+
     describe("called with string", function () {
         it("should return a new string with first letter turned to uppercase", function () {
             expect(upperFirst("")).toBe("");
