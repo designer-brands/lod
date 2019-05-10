@@ -4,7 +4,7 @@
   "description": "lod",
   "main": "src/index.js",
   "scripts": {
-    "test": "istanbul cover --include-all-sources -x spec/helpers/*.js jasmine"
+    "test": "istanbul cover -i src/**/*.js --include-all-sources jasmine"
   },
   "repository": {
     "type": "git",
