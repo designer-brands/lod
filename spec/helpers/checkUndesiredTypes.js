@@ -6,33 +6,56 @@
  * @param {String} options.expectedValue Expected value for the undesired types.
  * 
  */
-module.exports = function checkUndesiredTypes (options) {
-    const types = {
-        "number": [0, 1],
-        "string": ["a", "ab"],
-        "boolean": [true, false],
-        "object": [{}, {a: 1}],
-        "array": [[], [1]],
-        "undefined": [undefined],
-        "null": [null],
-        // "regex",
-        // "function",
-        // "set",
-        // "map",
-        // "weakSet",
-        // "weakMap",
-        // "symbol"
-    };
+beforeAll(function () {
+    this.checkUndesiredTypes = function checkUndesiredTypes (options) {
+        const types = {
+            "number": [0, 1],
+            "string": ["a", "ab"],
+            "boolean": [true, false],
+            "object": [{}, {a: 1}],
+            "array": [[], [1]],
+            "undefined": [undefined],
+            "null": [null],
+            // "regex",
+            // "function",
+            // "set",
+            // "map",
+            // "weakSet",
+            // "weakMap",
+            // "symbol"
+        };
 
-    Object.entries(types).forEach(([type, values] = entry) => {
-        if (!options.desiredTypes.includes(type)) {
-            values.forEach(value => {
-                describe(`when argument is ${JSON.stringify(value)}`, function () {
-                    it(`should return ${options.expectedValue}`, function () {
-                        expect(options.fn(value)).toEqual(options.expectedValue);
-                    });
+        let errors = {};
+
+        // loop through all types
+        Object.entries(types).forEach(([type, values] = entry) => {
+
+            // only care about undesired types
+            if (!options.desiredTypes.includes(type)) {
+
+                // for each undesired type, loop through its values array
+                values.forEach(value => {
+
+                    // run function with value in array and check its return
+                    if (options.fn(value) !== options.expectedValue) {
+
+                        if (!errors[type]) {
+                            errors[type] = [];
+                        }
+
+                        // if return is different from expected value, store in errors object
+                        errors[type].push(value);
+                    }
                 });
-            });
+            }
+        });
+
+        // no error
+        if (0 === Object.keys(errors).length) {
+            return false;
+        // has error
+        } else {
+            return "these values of undesired types have errors: " + Json.stringify(result);
         }
-    })
-};
+    };
+});

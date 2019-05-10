@@ -1,12 +1,15 @@
 const isNullOrUndefined = require("../src/isNullOrUndefined.js");
-const checkUndesiredTypes = require("./helpers/checkUndesiredTypes.js");
 
 describe("isNullOrUndefined", function() {
     describe("called with neither null nor undefined", function () {
-        checkUndesiredTypes({
-            desiredTypes: ["null", "undefined"],
-            fn: isNullOrUndefined,
-            expectedValue: false
+        it("should have no errors", function () {
+            let errors = this.checkUndesiredTypes({
+                desiredTypes: ["null", "undefined"],
+                fn: isNullOrUndefined,
+                expectedValue: false
+            });
+
+            expect(errors).toBe(false);
         });
     });
     
