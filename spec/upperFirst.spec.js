@@ -2,7 +2,7 @@ const upperFirst = require("../src/upperFirst.js");
 
 given("upperFirst method", function() {
     when("it is called with non-string types", function () {
-        then("it should have no errors", function () {
+        then("it should return an empty string as expected", function () {
             let errors = this.checkUndesiredTypes({
                 desiredTypes: ["string"],
                 fn: upperFirst,
