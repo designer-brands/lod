@@ -1,3 +1,13 @@
+function isEqual(a, b) {
+    // if it's object or array
+    if (a instanceof Object) {
+        return JSON.stringify(a) === JSON.stringify(b);
+    }
+
+    // if it's primitive
+    return a === b;
+}
+
 /***
  *
  * @param {Object} options
@@ -37,8 +47,7 @@ beforeAll(function () {
                 values.forEach(value => {
 
                     // run function with value in array and check its return
-                    if (options.fn(value) !== options.expectedValue) {
-
+                    if (!isEqual(options.fn(value), options.expectedValue)) {
                         if (!errors[type]) {
                             errors[type] = [];
                         }
