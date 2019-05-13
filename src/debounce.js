@@ -10,7 +10,7 @@ module.exports = function debounce (fn, wait) {
             clearTimeout(timeout);
         }
 
-        timeout = setTimetout(() => {
+        timeout = setTimeout(() => {
             fn.apply(this, arguments);
             timeout = null;
         }, wait, ...arguments);
