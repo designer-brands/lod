@@ -2,7 +2,7 @@ const groupBy = require("../src/groupBy.js");
 
 given("groupBy method", function () {
     when("called with a non-array type as the first argument ", function () {
-        then("it should have no errors", function () {
+        then("it should return an empty array as expected", function () {
             let errors = this.checkUndesiredTypes({
                 desiredTypes: ["array"],
                 fn: groupBy,

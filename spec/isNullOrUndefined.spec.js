@@ -2,7 +2,7 @@ const isNullOrUndefined = require("../src/isNullOrUndefined.js");
 
 given("isNullOrUndefined method", function() {
     when("it is called with neither null nor undefined", function () {
-        then("it should have no errors", function () {
+        then("it should return false as expected", function () {
             let errors = this.checkUndesiredTypes({
                 desiredTypes: ["null", "undefined"],
                 fn: isNullOrUndefined,
