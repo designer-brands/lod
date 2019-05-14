@@ -15,15 +15,15 @@ given("isObjectOrArray method", function () {
 
     when("called with an object", function () {
         then("it should return true", function () {
-            expect(isObjectOrArray({})).toBe(true);
-            expect(isObjectOrArray({a: 1})).toBe(true);
+            expect(isObjectOrArray({})).toBeTruthy();
+            expect(isObjectOrArray({a: 1})).toBeTruthy();
         });
     });
 
     when("called with an array", function () {
         then("it should return true", function () {
-            expect(isObjectOrArray([])).toBe(true);
-            expect(isObjectOrArray([1])).toBe(true);
+            expect(isObjectOrArray([])).toBeTruthy();
+            expect(isObjectOrArray([1])).toBeTruthy();
         });
     });
 });

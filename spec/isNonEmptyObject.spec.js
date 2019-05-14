@@ -15,13 +15,13 @@ given("isNonEmptyObject method", function () {
 
     when("called with an empty object", function () {
         then("it should return false", function () {
-            expect(isNonEmptyObject({})).toBe(false);
+            expect(isNonEmptyObject({})).toBeFalsy();
         });
     });
 
     when("called with a non-empty object", function () {
         then("it should return true", function () {
-            expect(isNonEmptyObject({a: 1})).toBe(true);
+            expect(isNonEmptyObject({a: 1})).toBeTruthy();
         });
     });
 });
