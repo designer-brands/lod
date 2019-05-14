@@ -1,6 +1,8 @@
 module.exports = function range (start, end, step) {
+    let args = [...arguments];
+
     // every arg must be a finite number
-    let isEveryArgFinite = [...arguments].every(
+    let isEveryArgFinite = args.every(
         arg => ("number" === typeof arg) && isFinite(arg)
     );
 
@@ -9,11 +11,11 @@ module.exports = function range (start, end, step) {
     }
 
     // normalize args
-    switch(arguments.length) {
+    switch(args.length) {
         // if 1 arg, imply it's end, start = 0 and step is 1 or -1
         case 1:
             start = 0;
-            end = arguments[0];
+            end = args[0];
             step = (start <= end ? 1 : -1);
             break;
         // if 2 args, imply they're start and end, and step is 1 or -1
@@ -23,13 +25,26 @@ module.exports = function range (start, end, step) {
     }
 
     // in case passing in all 3 args but step has a wrong sign
-    if (start <= end && step <= 0 || start >= end && step >= 0) {
+    if (start < end && step < 0 || start > end && step > 0) {
         return [];
     }
 
+    if (start === end) {
+        return [start];
+    }
+
+    if (step === 0) {
+        return [];
+    } 
+
     let result = [];
-    for (let n = start; n <= end; n += step) {
-        result.push(n);
+    for (
+        let n = start;
+        (start < end && n <= end) || (start > end && n >= end);
+        n += step
+    ) {
+
+        result.push(Number(n.toFixed(2)));
     }
 
     return result;
