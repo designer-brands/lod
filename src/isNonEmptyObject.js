@@ -1,7 +1,7 @@
-const isObjectOrArray = require("./isObjectOrArray.js");
+const isObject = require("./isObject.js");
 
 module.exports = function isNonEmptyObject (obj) {
     return Boolean(
-        isObjectOrArray(obj) && (!Array.isArray(obj)) && Object.keys(obj).length
+        isObject(obj) && Object.keys(obj).length
     );
 };
