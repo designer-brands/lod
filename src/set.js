@@ -6,7 +6,6 @@ module.exports = function set (obj, path, value) {
     }
 
     if ("string" !== typeof path) {
-        let value = obj[path];
         obj[path] = value;
 
         return obj;
