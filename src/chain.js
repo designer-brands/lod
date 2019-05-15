@@ -35,7 +35,7 @@ module.exports = function chain (value) {
         pick: wrap(pick),
         uniqBy: wrap(uniqBy),
         invoke: (fn, ...args) => {
-            val = fn(...args);
+            val = fn(val, ...args);
             return result;
         },
         value: () => val
