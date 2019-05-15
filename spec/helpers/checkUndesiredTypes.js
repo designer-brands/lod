@@ -1,4 +1,14 @@
 function isEqual(a, b) {
+    // if it's a function
+    if ("function" === typeof a) {
+        if ("function" !== typeof b) {
+            return false;
+        }
+
+        a = String(a);
+        b = String(b);
+    }
+
     // if it's object or array
     if (a instanceof Object) {
         return JSON.stringify(a) === JSON.stringify(b);
@@ -26,8 +36,8 @@ beforeAll(function () {
             "array": [[], [1]],
             "undefined": [undefined],
             "null": [null],
+            "function": [function () {}, () => {}],
             // "regex",
-            // "function",
             // "set",
             // "map",
             // "weakSet",
