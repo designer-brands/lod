@@ -1,6 +1,8 @@
 const chain = require("./chain.js");
 const debounce = require("./debounce.js");
 const defaultToArray = require("./defaultToArray.js");
+const defaultToObject = require("./defaultToObject.js");
+const defaultToString = require("./defaultToString.js");
 const get = require("./get.js");
 const groupBy = require("./groupBy.js");
 const isNonEmptyObject = require("./isNonEmptyObject.js");
@@ -17,6 +19,8 @@ module.exports = {
     chain,
     debounce,
     defaultToArray,
+    defaultToObject,
+    defaultToString,
     get,
     groupBy,
     isNonEmptyObject,
