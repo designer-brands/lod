@@ -176,4 +176,52 @@ given("get method", function() {
             expect(get(obj, "foo.bar.x.y", "default value")).toEqual("default value");
         });
     });
+
+    when("called with an array and a string path", function () {
+        let arr;
+
+        beforeEach(function () {
+            arr = [{
+                foo: {
+                    bar: [1, 2]
+                }
+            }]
+        });
+
+        then("it should return the value of the given path if it exists", function () {
+            expect(get(arr, "0.foo.bar")).toEqual([1, 2]);
+            expect(get(arr, "0.foo.bar.1")).toBe(2);
+        });
+
+        then("it should return undefined if the value of the given path doesn't exist", function () {
+            expect(get(arr, "1")).toEqual(void 0);
+            expect(get(arr, "0.x")).toEqual(void 0);
+            expect(get(arr, "0.x.y")).toEqual(void 0);
+            expect(get(arr, "0.foo.x")).toBe(void 0);
+        });
+    });
+
+    when("called with an array, a string path and a default value", function () {
+        let arr;
+
+        beforeEach(function () {
+            arr = [{
+                foo: {
+                    bar: [1, 2]
+                }
+            }]
+        });
+
+        then("it should return the value of the given path if it exists", function () {
+            expect(get(arr, "0.foo.bar", "default value")).toEqual([1, 2]);
+            expect(get(arr, "0.foo.bar.1", "default value")).toBe(2);
+        });
+
+        then("it should return the default value if the value of the given path doesn't exist", function () {
+            expect(get(arr, "1", "default value")).toEqual("default value");
+            expect(get(arr, "0.x", "default value")).toEqual("default value");
+            expect(get(arr, "0.x.y", "default value")).toEqual("default value");
+            expect(get(arr, "0.foo.x", "default value")).toBe("default value");
+        });
+    });
 });
