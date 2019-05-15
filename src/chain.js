@@ -1,4 +1,5 @@
 const defaultToArray = require("./defaultToArray.js");
+const defaultToNumber = require("./defaultToNumber.js");
 const defaultToObject = require("./defaultToObject.js");
 const defaultToString = require("./defaultToString.js");
 const get = require("./get.js");
@@ -21,6 +22,7 @@ module.exports = function chain (value) {
 
     let result = {
         defaultToArray: wrap(defaultToArray),
+        defaultToNumber: wrap(defaultToNumber),
         defaultToObject: wrap(defaultToObject),
         defaultToString: wrap(defaultToString),
         get: wrap(get),
