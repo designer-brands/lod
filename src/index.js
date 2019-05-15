@@ -1,6 +1,7 @@
 const chain = require("./chain.js");
 const debounce = require("./debounce.js");
 const defaultToArray = require("./defaultToArray.js");
+const defaultToNumber = require("./defaultToNumber.js");
 const defaultToObject = require("./defaultToObject.js");
 const defaultToString = require("./defaultToString.js");
 const get = require("./get.js");
@@ -22,6 +23,7 @@ module.exports = {
     chain,
     debounce,
     defaultToArray,
+    defaultToNumber,
     defaultToObject,
     defaultToString,
     get,
