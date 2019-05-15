@@ -2,7 +2,7 @@ const defaultToObject = require("../src/defaultToObject.js");
 
 given("defaultToObject method", function () {
     when("called with a non-object type", function () {
-        then("it should return an empty array as expected", function () {
+        then("it should return an empty object as expected", function () {
             let errors = this.checkUndesiredTypes({
                 desiredTypes: ["object"],
                 fn: defaultToObject,
