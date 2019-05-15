@@ -8,6 +8,8 @@ given("set method", function () {
                 fn: set,
                 expectedValue: "$self"
             });
+
+            expect(errors).toBe("");
         });
     });
 
@@ -26,9 +28,8 @@ given("set method", function () {
             expect(arr).toEqual([
                 "abc",
                 {
-                    foo: [
-                        ,
-                        ,
+                    // eslint-disable-next-line no-sparse-arrays
+                    foo: [,,
                         {
                             bar: "xyz"
                         }
@@ -60,8 +61,8 @@ given("set method", function () {
 
             expect(set(obj, "foo.1.bar", "xyz")).toBe(obj);
             expect(obj).toEqual({
-                foo: [
-                    ,
+                // eslint-disable-next-line no-sparse-arrays
+                foo: [,
                     {
                         bar: "xyz"
                     }

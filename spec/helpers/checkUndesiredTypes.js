@@ -48,7 +48,7 @@ beforeAll(function () {
         let errors = {};
 
         // loop through all types
-        Object.entries(types).forEach(([type, values] = entry) => {
+        Object.entries(types).forEach(([type, values]) => {
 
             // only care about undesired types
             if (!options.desiredTypes.includes(type)) {

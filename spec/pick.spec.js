@@ -40,6 +40,7 @@ given("pick method", function () {
 
             expect(pick(obj, "foo.bar.1.c", "foo.bar.notExist", "y", "foo.notExist", "notExist", "foo.notExist.bar")).toEqual({
                 foo: {
+                    // eslint-disable-next-line no-sparse-arrays
                     bar: [, {
                         c: 33
                     }]

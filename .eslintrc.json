@@ -1,0 +1,38 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "overrides": [
+        {
+            "env": {
+                "browser": true,
+                "commonjs": true,
+                "es6": true
+            },
+            "files": "src/**/*.js"
+        },
+        {
+            "env": {
+                "jasmine": true,
+                "commonjs": true,
+                "node": true,
+                "es6": true
+            },
+            "globals": {
+                "given": false,
+                "when": false,
+                "then": false
+            },
+            "files": ["spec/*.spec.js"]
+        },
+        {
+            "env": {
+                "jasmine": true,
+                "node": true,
+                "es6": true
+            },
+            "files": ["spec/helpers/*.js"]
+        }
+    ]
+}

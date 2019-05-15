@@ -4,6 +4,7 @@
   "description": "lod",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint \"src/**/*.js\" \"spec/**/*.spec.js\" \"spec/helpers/*.js\"",
     "test": "istanbul cover -i src/**/*.js --include-all-sources jasmine && istanbul check-coverage --statements 100 --branches 100"
   },
   "repository": {
@@ -14,6 +15,7 @@
     "lod"
   ],
   "pre-commit": [
+    "lint",
     "test"
   ],
   "author": "Jason",
@@ -21,6 +23,7 @@
   "homepage": "https://bitbucket.org/jl442741/lod#readme",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^5.16.0",
     "istanbul": "^0.4.5",
     "jasmine": "^3.4.0",
     "pre-commit": "^1.2.2"
