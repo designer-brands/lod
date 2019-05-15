@@ -15,6 +15,7 @@ module.exports = function chain (value) {
 
     let result = {
         get: wrap(get),
+        defaultToArray: wrap(defaultToArray),
         groupBy: wrap(groupBy),
         pick: wrap(pick),
         uniqBy: wrap(uniqBy),
