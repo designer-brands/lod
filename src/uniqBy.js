@@ -3,13 +3,17 @@ module.exports = function uniqBy (arr, iteratee = val => val) {
         return [];
     }
 
-    return arr.reduce((acc, cur) => {
-        let mapped = iteratee(cur);
+    let mappedSet = new Set();
+    let result = [];
 
-        if (!acc.includes[mapped]) {
-            acc.push(mapped);
+    arr.forEach(element => {
+        let mapped = iteratee(element);
+
+        if (!mappedSet.has(mapped)) {
+            mappedSet.add(mapped);
+            result.push(element);
         }
+    });
 
-        return acc;
-    }, []);
+    return result;
 };
