@@ -35,6 +35,19 @@ given("set method", function () {
                     ]
                 }
             ]);
+
+            let arr2 = [{
+                a: 1
+            }, {
+                a: 2
+            }];
+
+            expect(set(arr2, "1.a", 3)).toBe(arr2);
+            expect(arr2).toEqual([{
+                a: 1
+            }, {
+                a: 3
+            }]);
         });
     });
 
@@ -54,6 +67,19 @@ given("set method", function () {
                     }
                 ],
                 bar: "def"
+            });
+
+            let obj2 = {
+                foo: {
+                    bar: 1
+                }
+            };
+
+            expect(set(obj2, "foo.bar", 2)).toBe(obj2);
+            expect(obj2).toEqual({
+                foo: {
+                    bar: 2
+                }
             });
         });
     });
