@@ -2,6 +2,9 @@ const defaultToArray = require("./defaultToArray.js");
 const defaultToObject = require("./defaultToObject.js");
 const defaultToString = require("./defaultToString.js");
 const get = require("./get.js");
+const getAsArray = require("./getAsArray.js");
+const getAsObject = require("./getAsObject.js");
+const getAsString = require("./getAsString.js");
 const groupBy = require("./groupBy.js");
 const pick = require("./pick.js");
 const uniqBy = require("./uniqBy.js");
@@ -21,6 +24,9 @@ module.exports = function chain (value) {
         defaultToObject: wrap(defaultToObject),
         defaultToString: wrap(defaultToString),
         get: wrap(get),
+        getAsArray: wrap(getAsArray),
+        getAsObject: wrap(getAsObject),
+        getAsString: wrap(getAsString),
         groupBy: wrap(groupBy),
         pick: wrap(pick),
         uniqBy: wrap(uniqBy),
