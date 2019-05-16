@@ -1,28 +1,34 @@
 {
-  "name": "lod",
-  "version": "1.0.0",
-  "description": "lod",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "istanbul cover -i src/**/*.js --include-all-sources jasmine && istanbul check-coverage --statements 100 --branches 100"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/jl442741/lod.git"
-  },
-  "keywords": [
-    "lod"
-  ],
-  "pre-commit": [
-    "test"
-  ],
-  "author": "Jason",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/jl442741/lod#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "istanbul": "^0.4.5",
-    "jasmine": "^3.4.0",
-    "pre-commit": "^1.2.2"
-  }
+	"name": "lod",
+	"version": "1.0.0",
+	"description": "lod",
+	"main": "src/index.js",
+	"scripts": {
+		"lint": "eslint \"src/**/*.js\" \"spec/**/*.spec.js\" \"spec/helpers/*.js\"",
+		"test": "npm-run-all unit coverage",
+		"unit": "istanbul cover -i src/**/*.js --include-all-sources jasmine",
+		"coverage": "istanbul check-coverage --statements 100 --branches 100",
+		"pre-commit": "npm-run-all --parallel lint test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@bitbucket.org/jl442741/lod.git"
+	},
+	"keywords": [
+		"lod"
+	],
+	"pre-commit": [
+		"pre-commit"
+	],
+	"author": "Jason",
+	"license": "ISC",
+	"homepage": "https://bitbucket.org/jl442741/lod#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"eslint": "^5.16.0",
+		"istanbul": "^0.4.5",
+		"jasmine": "^3.4.0",
+		"npm-run-all": "^4.1.5",
+		"pre-commit": "^1.2.2"
+	}
 }

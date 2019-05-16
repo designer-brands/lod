@@ -1,3 +1,3 @@
 module.exports = function defaultToString (value) {
-    return "string" === typeof value ? value : "";
+	return "string" === typeof value ? value : "";
 };

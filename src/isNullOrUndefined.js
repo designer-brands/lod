@@ -1,3 +1,4 @@
 module.exports = function isNullOrUndefined (value) {
-    return value == null;
+	// eslint-disable-next-line eqeqeq
+	return value == null;
 };

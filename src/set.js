@@ -1,37 +1,37 @@
 const isObjectOrArray = require("./isObjectOrArray.js");
 
 module.exports = function set (obj, path, value) {
-    if (!isObjectOrArray(obj)) {
-        return obj;
-    }
+	if (!isObjectOrArray(obj)) {
+		return obj;
+	}
 
-    if ("string" !== typeof path) {
-        obj[path] = value;
+	if ("string" !== typeof path) {
+		obj[path] = value;
 
-        return obj;
-    }
+		return obj;
+	}
 
-    let parts = path.split(".");
-    let pointer = obj;
+	let parts = path.split(".");
+	let pointer = obj;
 
-    let l = parts.length;
-    let lastPart = parts[l - 1];
+	let l = parts.length;
+	let lastPart = parts[l - 1];
 
-    for (let i = 0; i < l - 1; ++i) {
-        let part = parts[i];
-        let nextPart = parts[i + 1];
+	for (let i = 0; i < l - 1; ++i) {
+		let part = parts[i];
+		let nextPart = parts[i + 1];
 
-        // create [] or {} as needed
-        if (!isObjectOrArray(pointer[part])) {
-            let isNumerical = nextPart.match(/^\d+$/);
-            pointer[part] = isNumerical ? [] : {};
-        }
+		// create [] or {} as needed
+		if (!isObjectOrArray(pointer[part])) {
+			let isNumerical = nextPart.match(/^\d+$/);
+			pointer[part] = isNumerical ? [] : {};
+		}
 
-        // go deeper
-        pointer = pointer[part];
-    }
+		// go deeper
+		pointer = pointer[part];
+	}
 
-    pointer[lastPart] = value;
+	pointer[lastPart] = value;
 
-    return obj;
+	return obj;
 };

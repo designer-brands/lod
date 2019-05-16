@@ -12,34 +12,35 @@ const pick = require("./pick.js");
 const uniqBy = require("./uniqBy.js");
 
 module.exports = function chain (value) {
-    let val = value;
+	let val = value;
 
-    function wrap (fn) {
-        return (...args) => {
-            val = fn(val, ...args);
-            return result;
-        };
-    }
+	function wrap (fn) {
+		return (...args) => {
+			val = fn(val, ...args);
+			// eslint-disable-next-line no-use-before-define
+			return result;
+		};
+	}
 
-    let result = {
-        defaultToArray: wrap(defaultToArray),
-        defaultToNumber: wrap(defaultToNumber),
-        defaultToObject: wrap(defaultToObject),
-        defaultToString: wrap(defaultToString),
-        get: wrap(get),
-        getAsArray: wrap(getAsArray),
-        getAsNumber: wrap(getAsNumber),
-        getAsObject: wrap(getAsObject),
-        getAsString: wrap(getAsString),
-        groupBy: wrap(groupBy),
-        pick: wrap(pick),
-        uniqBy: wrap(uniqBy),
-        invoke: (fn, ...args) => {
-            val = fn(val, ...args);
-            return result;
-        },
-        value: () => val
-    }
+	let result = {
+		defaultToArray: wrap(defaultToArray),
+		defaultToNumber: wrap(defaultToNumber),
+		defaultToObject: wrap(defaultToObject),
+		defaultToString: wrap(defaultToString),
+		get: wrap(get),
+		getAsArray: wrap(getAsArray),
+		getAsNumber: wrap(getAsNumber),
+		getAsObject: wrap(getAsObject),
+		getAsString: wrap(getAsString),
+		groupBy: wrap(groupBy),
+		pick: wrap(pick),
+		uniqBy: wrap(uniqBy),
+		invoke: (fn, ...args) => {
+			val = fn(val, ...args);
+			return result;
+		},
+		value: () => val
+	};
 
-    return result;
+	return result;
 };
