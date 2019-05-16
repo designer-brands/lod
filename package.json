@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint \"src/**/*.js\" \"spec/**/*.spec.js\" \"spec/helpers/*.js\"",
-    "test": "istanbul cover -i src/**/*.js --include-all-sources jasmine && istanbul check-coverage --statements 100 --branches 100",
+    "test": "npm-run-all unit coverage",
+    "unit": "istanbul cover -i src/**/*.js --include-all-sources jasmine",
+    "coverage": "istanbul check-coverage --statements 100 --branches 100",
     "pre-commit": "npm-run-all --parallel lint test"
   },
   "repository": {
