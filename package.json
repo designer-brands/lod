@@ -24,7 +24,9 @@
 	"author": "Jason",
 	"license": "ISC",
 	"homepage": "https://bitbucket.org/jl442741/lod#readme",
-	"dependencies": {},
+	"dependencies": {
+		"@babel/polyfill": "^7.4.4"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.4.4",
 		"@babel/preset-env": "^7.4.4",
