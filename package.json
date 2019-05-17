@@ -4,7 +4,7 @@
 	"description": "lod",
 	"main": "src/index.js",
 	"scripts": {
-		"lint": "eslint \"src/**/*.js\" \"spec/**/*.spec.js\" \"spec/helpers/*.js\"",
+		"lint": "eslint \"src/**/*.js\" \"spec/**/*.spec.js\" \"spec/helpers/*.js\" \"*.js\"",
 		"test": "npm-run-all unit coverage",
 		"unit": "istanbul cover -i src/**/*.js --include-all-sources jasmine",
 		"coverage": "istanbul check-coverage --statements 100 --branches 100",
