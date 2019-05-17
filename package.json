@@ -9,7 +9,7 @@
 		"test:unit": "istanbul cover -i src/**/*.js --include-all-sources jasmine",
 		"test:coverage": "istanbul check-coverage --statements 100 --branches 100",
 		"build": "webpack",
-		"pre-commit": "npm-run-all --parallel lint test --serial build"
+		"pre-commit": "npm-run-all --parallel lint test --serial build && git add dist"
 	},
 	"repository": {
 		"type": "git",
