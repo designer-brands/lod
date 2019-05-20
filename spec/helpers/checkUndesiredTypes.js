@@ -56,7 +56,7 @@ beforeAll(function () {
 				values.forEach(value => {
 
 					// run function with value in array and check its return
-					let expectedValue = options.expectedValue === "$self" ? value : options.expectedValue;
+					let expectedValue = "$self" === options.expectedValue ? value : options.expectedValue;
 					if (!isEqual(options.fn(value), expectedValue)) {
 						if (!errors[type]) {
 							errors[type] = [];
