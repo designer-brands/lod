@@ -67,7 +67,10 @@
 		"implicit-arrow-linebreak": "error",
 		"indent": [
 			"error",
-			"tab"
+			"tab",
+			{
+				"SwitchCase": 1
+			}
 		],
 		"key-spacing": "error",
 		"keyword-spacing": "error",
