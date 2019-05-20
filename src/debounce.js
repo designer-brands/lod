@@ -1,5 +1,5 @@
 module.exports = function debounce (fn, wait) {
-	if (typeof wait !== "number" || !isFinite(wait)) {
+	if ("number" !== typeof wait || !isFinite(wait)) {
 		wait = 100;
 	}
 
