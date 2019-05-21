@@ -6,6 +6,7 @@ const defaultToObject = require("./defaultToObject.js");
 const defaultToString = require("./defaultToString.js");
 const get = require("./get.js");
 const getAsArray = require("./getAsArray.js");
+const getAsBoolean = require("./getAsBoolean.js");
 const getAsNumber = require("./getAsNumber.js");
 const getAsObject = require("./getAsObject.js");
 const getAsString = require("./getAsString.js");
@@ -29,6 +30,7 @@ module.exports = {
 	defaultToString,
 	get,
 	getAsArray,
+	getAsBoolean,
 	getAsNumber,
 	getAsObject,
 	getAsString,

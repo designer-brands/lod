@@ -4,6 +4,7 @@ const defaultToObject = require("./defaultToObject.js");
 const defaultToString = require("./defaultToString.js");
 const get = require("./get.js");
 const getAsArray = require("./getAsArray.js");
+const getAsBoolean = require("./getAsBoolean.js");
 const getAsNumber = require("./getAsNumber.js");
 const getAsObject = require("./getAsObject.js");
 const getAsString = require("./getAsString.js");
@@ -29,6 +30,7 @@ module.exports = function chain (value) {
 		defaultToString: wrap(defaultToString),
 		get: wrap(get),
 		getAsArray: wrap(getAsArray),
+		getAsBoolean: wrap(getAsBoolean),
 		getAsNumber: wrap(getAsNumber),
 		getAsObject: wrap(getAsObject),
 		getAsString: wrap(getAsString),
