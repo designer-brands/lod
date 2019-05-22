@@ -33,47 +33,47 @@ given("getAsBoolean method", function () {
 		});
 
 		then("it should return the value of the given path if it is a boolean", function () {
-			expect(getAsBoolean(obj, "foo.a")).toEqual(false);
-			expect(getAsBoolean(obj, "foo.b")).toEqual(true);
-			expect(getAsBoolean(arr, "0.foo.a")).toEqual(false);
-			expect(getAsBoolean(arr, "0.foo.b")).toEqual(true);
+			expect(getAsBoolean(obj, "foo.a")).toBeFalsy();
+			expect(getAsBoolean(obj, "foo.b")).toBeTruthy();
+			expect(getAsBoolean(arr, "0.foo.a")).toBeFalsy();
+			expect(getAsBoolean(arr, "0.foo.b")).toBeTruthy();
 		});
 
 		then("it should convert the value of the given path if it is not a boolean", function () {
-			expect(getAsBoolean(obj, "foo.c")).toEqual(true);
-			expect(getAsBoolean(obj, "foo.d")).toEqual(false);
-			expect(getAsBoolean(obj, "foo.e")).toEqual(false);
-			expect(getAsBoolean(obj, "foo.f")).toEqual(true);
-			expect(getAsBoolean(obj, "bar")).toEqual(true);
-			expect(getAsBoolean(obj, "baz")).toEqual(true);
+			expect(getAsBoolean(obj, "foo.c")).toBeTruthy();
+			expect(getAsBoolean(obj, "foo.d")).toBeFalsy();
+			expect(getAsBoolean(obj, "foo.e")).toBeFalsy();
+			expect(getAsBoolean(obj, "foo.f")).toBeTruthy();
+			expect(getAsBoolean(obj, "bar")).toBeTruthy();
+			expect(getAsBoolean(obj, "baz")).toBeTruthy();
 
-			expect(getAsBoolean(arr, "0.foo.c")).toEqual(true);
-			expect(getAsBoolean(arr, "0.foo.d")).toEqual(false);
-			expect(getAsBoolean(arr, "0.foo.e")).toEqual(false);
-			expect(getAsBoolean(arr, "0.foo.f")).toEqual(true);
-			expect(getAsBoolean(arr, "0.bar")).toEqual(true);
-			expect(getAsBoolean(arr, "0.baz")).toEqual(true);
+			expect(getAsBoolean(arr, "0.foo.c")).toBeTruthy();
+			expect(getAsBoolean(arr, "0.foo.d")).toBeFalsy();
+			expect(getAsBoolean(arr, "0.foo.e")).toBeFalsy();
+			expect(getAsBoolean(arr, "0.foo.f")).toBeTruthy();
+			expect(getAsBoolean(arr, "0.bar")).toBeTruthy();
+			expect(getAsBoolean(arr, "0.baz")).toBeTruthy();
 
-			expect(getAsBoolean("abc", "length")).toEqual(true);
-			expect(getAsBoolean(1, "constructor")).toEqual(true);
-			expect(getAsBoolean(false, "constructor")).toEqual(true);
+			expect(getAsBoolean("abc", "length")).toBeTruthy();
+			expect(getAsBoolean(1, "constructor")).toBeTruthy();
+			expect(getAsBoolean(false, "constructor")).toBeTruthy();
 		});
 
 		then("it should return false if the value of the given path does not exist", function () {
-			expect(getAsBoolean(obj, "foo.x")).toEqual(false);
-			expect(getAsBoolean(obj, "foo.x.y")).toEqual(false);
-			expect(getAsBoolean(obj, "x")).toEqual(false);
+			expect(getAsBoolean(obj, "foo.x")).toBeFalsy();
+			expect(getAsBoolean(obj, "foo.x.y")).toBeFalsy();
+			expect(getAsBoolean(obj, "x")).toBeFalsy();
 
-			expect(getAsBoolean(arr, "0.foo.x")).toEqual(false);
-			expect(getAsBoolean(arr, "0.foo.x.y")).toEqual(false);
-			expect(getAsBoolean(arr, "0.x")).toEqual(false);
-			expect(getAsBoolean(arr, "1")).toEqual(false);
+			expect(getAsBoolean(arr, "0.foo.x")).toBeFalsy();
+			expect(getAsBoolean(arr, "0.foo.x.y")).toBeFalsy();
+			expect(getAsBoolean(arr, "0.x")).toBeFalsy();
+			expect(getAsBoolean(arr, "1")).toBeFalsy();
 
-			expect(getAsBoolean("abc", "foo")).toEqual(false);
-			expect(getAsBoolean(1, "foo")).toEqual(false);
-			expect(getAsBoolean(false, "foo")).toEqual(false);
-			expect(getAsBoolean(void 0, "foo")).toEqual(false);
-			expect(getAsBoolean(null, "foo")).toEqual(false);
+			expect(getAsBoolean("abc", "foo")).toBeFalsy();
+			expect(getAsBoolean(1, "foo")).toBeFalsy();
+			expect(getAsBoolean(false, "foo")).toBeFalsy();
+			expect(getAsBoolean(void 0, "foo")).toBeFalsy();
+			expect(getAsBoolean(null, "foo")).toBeFalsy();
 		});
 	});
 });
