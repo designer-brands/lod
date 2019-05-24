@@ -6,7 +6,7 @@
 	"scripts": {
 		"lint": "eslint \"src/**/*.js\" \"spec/**/*.spec.js\" \"spec/helpers/*.js\"",
 		"test": "npm-run-all test:unit test:coverage",
-		"test:unit": "istanbul cover -i src/**/*.js --include-all-sources jasmine",
+		"test:unit": "istanbul cover -i src/**/*.js --include-all-sources -x src/index.js jasmine",
 		"test:coverage": "istanbul check-coverage --statements 100 --branches 100",
 		"pre-commit": "npm-run-all --parallel lint test"
 	},
