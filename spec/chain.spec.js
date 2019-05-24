@@ -2,20 +2,12 @@ const chain = require("../src/chain.js");
 
 given("chain method", function () {
 	when("called with a value", function () {
-		then("it should return an object with 15 library methods used for chaining", function () {
-			let methods1 = Object.values(chain({}));
+		then("it should return an object with 16 library methods used for chaining", function () {
+			let methods = Object.values(chain({}));
 
-			expect(methods1.length).toBe(15);
+			expect(methods.length).toBe(16);
 
-			methods1.forEach(method => {
-				expect(method).toEqual(jasmine.any(Function));
-			});
-
-			let methods2 = Object.values(chain([]));
-
-			expect(methods2.length).toBe(15);
-
-			methods2.forEach(method => {
+			methods.forEach(method => {
 				expect(method).toEqual(jasmine.any(Function));
 			});
 		});

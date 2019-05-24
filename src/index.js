@@ -14,6 +14,7 @@ const groupBy = require("./groupBy.js");
 const isNonEmptyObject = require("./isNonEmptyObject.js");
 const isNullOrUndefined = require("./isNullOrUndefined.js");
 const isObject = require("./isObject.js");
+const last = require("./last.js");
 const pick = require("./pick.js");
 const range = require("./range.js");
 const toCamelCase = require("./toCamelCase.js");
@@ -38,6 +39,7 @@ module.exports = {
 	isNonEmptyObject,
 	isNullOrUndefined,
 	isObject,
+	last,
 	pick,
 	range,
 	toCamelCase,

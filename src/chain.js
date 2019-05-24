@@ -9,6 +9,7 @@ const getAsNumber = require("./getAsNumber.js");
 const getAsObject = require("./getAsObject.js");
 const getAsString = require("./getAsString.js");
 const groupBy = require("./groupBy.js");
+const last = require("./last.js");
 const pick = require("./pick.js");
 const uniqBy = require("./uniqBy.js");
 
@@ -35,6 +36,7 @@ module.exports = function chain (value) {
 		getAsObject: wrap(getAsObject),
 		getAsString: wrap(getAsString),
 		groupBy: wrap(groupBy),
+		last: wrap(last),
 		pick: wrap(pick),
 		uniqBy: wrap(uniqBy),
 		invoke: (fn, ...args) => {
