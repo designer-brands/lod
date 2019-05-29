@@ -11,6 +11,7 @@ const getAsNumber = require("./getAsNumber.js");
 const getAsObject = require("./getAsObject.js");
 const getAsString = require("./getAsString.js");
 const groupBy = require("./groupBy.js");
+const isNonEmptyArray = require("./isNonEmptyArray.js");
 const isNonEmptyObject = require("./isNonEmptyObject.js");
 const isNullOrUndefined = require("./isNullOrUndefined.js");
 const isObject = require("./isObject.js");
@@ -37,6 +38,7 @@ module.exports = {
 	getAsObject,
 	getAsString,
 	groupBy,
+	isNonEmptyArray,
 	isNonEmptyObject,
 	isNullOrUndefined,
 	isObject,
