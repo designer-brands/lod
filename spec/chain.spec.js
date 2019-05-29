@@ -139,5 +139,37 @@ given("chain method", function () {
 				val: 3
 			});
 		});
+
+		then("chaining using the current value's native method in the middle should work", function () {
+			let a = [{
+				foo: {
+					id: "1xx"
+				},
+				value: 1,
+				include: true
+			}, {
+				foo: {
+					id: "2xx"
+				},
+				value: 2,
+				include: true
+			}, {
+				foo: {
+					id: "3xx"
+				},
+				value: 3,
+				include: false
+			}];
+
+			let result = chain(a)
+				.filter(obj => obj.include)
+				.find(obj => obj.value > 1)
+				.get("foo.id")
+				.slice(0, 1)
+				.invoke(char => Number(char))
+				.value();
+
+			expect(result).toBe(2);
+		});
 	});
 });

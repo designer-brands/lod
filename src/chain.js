@@ -14,14 +14,42 @@ const pick = require("./pick.js");
 const sortBy = require("./sortBy.js");
 const uniqBy = require("./uniqBy.js");
 
+const isNullOrUndefined = require("./isNullOrUndefined.js");
+
 module.exports = function chain (value) {
 	let val = value;
+
+	function updateProto (target, source) {
+		let newProto = {};
+
+		if (!isNullOrUndefined(source)) {
+			let proto = Object.getPrototypeOf(source);
+
+			Object.entries(Object.getOwnPropertyDescriptors(proto)).forEach(([key, descriptor]) => {
+				if ("function" === typeof descriptor.value) {
+					newProto[key] = function (...args) {
+						val = proto[key].call(val, ...args);
+
+						/* eslint-disable no-use-before-define */
+						updateProto(result, val);
+						return result;
+						/* eslint-enable no-use-before-define */
+					};
+				}
+			});
+		}
+
+		Object.setPrototypeOf(target, newProto);
+	}
 
 	function wrap (fn) {
 		return (...args) => {
 			val = fn(val, ...args);
-			// eslint-disable-next-line no-use-before-define
+
+			/* eslint-disable no-use-before-define */
+			updateProto(result, val);
 			return result;
+			/* eslint-enable no-use-before-define */
 		};
 	}
 
@@ -48,5 +76,6 @@ module.exports = function chain (value) {
 		value: () => val
 	};
 
+	updateProto(result, val);
 	return result;
 };
