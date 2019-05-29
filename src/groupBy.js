@@ -1,4 +1,6 @@
-module.exports = function groupBy (arr, iteratee = a => a) {
+const identity = require("./helpers/identity.js");
+
+module.exports = function groupBy (arr, iteratee = identity) {
 	if (!Array.isArray(arr)) {
 		return [];
 	}

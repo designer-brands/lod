@@ -10,3 +10,9 @@
 
 ## 1.3.0
 * Add readme.md and changelog.md.
+
+## 1.4.0
+* Fix potential issue when running unit test on windows platform.
+* Add sortBy() method.
+* Add isNonEmptyArray() method.
+* Add support to native methods of the current value in chaining in order to avoid the use of invoke() method.

@@ -2,12 +2,8 @@ const chain = require("../src/chain.js");
 
 given("chain method", function () {
 	when("called with a value", function () {
-		then("it should return an object with 16 library methods used for chaining", function () {
-			let methods = Object.values(chain({}));
-
-			expect(methods.length).toBe(16);
-
-			methods.forEach(method => {
+		then("it should return an object with library methods used for chaining", function () {
+			Object.values(chain({})).forEach(method => {
 				expect(method).toEqual(jasmine.any(Function));
 			});
 		});
@@ -142,6 +138,38 @@ given("chain method", function () {
 				name: "bar",
 				val: 3
 			});
+		});
+
+		then("chaining using the current value's native method in the middle should work", function () {
+			let a = [{
+				foo: {
+					id: "1xx"
+				},
+				value: 1,
+				include: true
+			}, {
+				foo: {
+					id: "2xx"
+				},
+				value: 2,
+				include: true
+			}, {
+				foo: {
+					id: "3xx"
+				},
+				value: 3,
+				include: false
+			}];
+
+			let result = chain(a)
+				.filter(obj => obj.include)
+				.find(obj => obj.value > 1)
+				.get("foo.id")
+				.slice(0, 1)
+				.invoke(char => Number(char))
+				.value();
+
+			expect(result).toBe(2);
 		});
 	});
 });

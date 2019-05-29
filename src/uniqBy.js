@@ -1,4 +1,6 @@
-module.exports = function uniqBy (arr, iteratee = val => val) {
+const identity = require("./helpers/identity.js");
+
+module.exports = function uniqBy (arr, iteratee = identity) {
 	if (!Array.isArray(arr)) {
 		return [];
 	}
