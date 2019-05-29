@@ -22,8 +22,7 @@ If you are adding a new method, make sure it's exposed in index.js and decide if
 
 When you are done with your changes, update changelog.md.
 
-Then run the script below to rev up the version. Refer to 
-[SEMVER](https://semver.org/) to make sure you update the right part of the version.
+Then run the script below to rev up the version. Refer to [SEMVER](https://semver.org/) to make sure you update the right part of the version.
 ```
 npm version major|minor|patch
 ```
