@@ -1,6 +1,6 @@
 {
 	"name": "lod",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "A lightweight version of lodash. Unused stuff and 'ash' are removed for simplicity.",
 	"main": "src/index.js",
 	"scripts": {
