@@ -17,6 +17,7 @@ const isObject = require("./isObject.js");
 const last = require("./last.js");
 const pick = require("./pick.js");
 const range = require("./range.js");
+const sortBy = require("./sortBy.js");
 const toCamelCase = require("./toCamelCase.js");
 const uniqBy = require("./uniqBy.js");
 const uniqueId = require("./uniqueId.js");
@@ -42,6 +43,7 @@ module.exports = {
 	last,
 	pick,
 	range,
+	sortBy,
 	toCamelCase,
 	uniqBy,
 	uniqueId,

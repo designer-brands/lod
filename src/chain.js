@@ -11,6 +11,7 @@ const getAsString = require("./getAsString.js");
 const groupBy = require("./groupBy.js");
 const last = require("./last.js");
 const pick = require("./pick.js");
+const sortBy = require("./sortBy.js");
 const uniqBy = require("./uniqBy.js");
 
 module.exports = function chain (value) {
@@ -38,6 +39,7 @@ module.exports = function chain (value) {
 		groupBy: wrap(groupBy),
 		last: wrap(last),
 		pick: wrap(pick),
+		sortBy: wrap(sortBy),
 		uniqBy: wrap(uniqBy),
 		invoke: (fn, ...args) => {
 			val = fn(val, ...args);
