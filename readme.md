@@ -18,6 +18,8 @@ npm run test
 
 Precommit hook for each commit also runs the above 2 scripts automatically, and if there is any error the commit will be discarded.
 
+If you are adding a new method, make sure it's exposed in index.js and decide if it should also be included in chain.js.
+
 When you are done with your changes, update changelog.md.
 
 Then run the script below to rev up the version. Refer to 
