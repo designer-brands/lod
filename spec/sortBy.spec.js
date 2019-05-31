@@ -69,6 +69,41 @@ given("sortBy method", function () {
 		});
 	});
 
+	when("called with an array, and a path", function () {
+		then("it should return a new array sorted by the value at the given path in ascending order", function () {
+			let arr = [{
+				inner: {
+					value: 1
+				}
+			}, {
+				inner: {
+					value: 3
+				}
+			}, {
+				inner: {
+					value: 2
+				}
+			}];
+
+			let result = sortBy(arr, "inner.value");
+
+			expect(result).not.toBe(arr);
+			expect(result).toEqual([{
+				inner: {
+					value: 1
+				}
+			}, {
+				inner: {
+					value: 2
+				}
+			}, {
+				inner: {
+					value: 3
+				}
+			}]);
+		});
+	});
+
 	when("called with an array, an iteratee function and true", function () {
 		then("it should return a new array sorted in descending order based on the iteratee", function () {
 			let arr = [{
@@ -111,6 +146,41 @@ given("sortBy method", function () {
 				value: 2
 			}, {
 				value: 1
+			}]);
+		});
+	});
+
+	when("called with an array, a path and true", function () {
+		then("it should return a new array sorted by the value at the given path in descending order", function () {
+			let arr = [{
+				inner: {
+					value: 1
+				}
+			}, {
+				inner: {
+					value: 3
+				}
+			}, {
+				inner: {
+					value: 2
+				}
+			}];
+
+			let result = sortBy(arr, "inner.value", true);
+
+			expect(result).not.toBe(arr);
+			expect(result).toEqual([{
+				inner: {
+					value: 3
+				}
+			}, {
+				inner: {
+					value: 2
+				}
+			}, {
+				inner: {
+					value: 1
+				}
 			}]);
 		});
 	});
