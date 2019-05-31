@@ -11,6 +11,7 @@
 		"template": "node_modules/docdash",
 		"readme": "readme.md",
 		"destination": "docs/",
+		"tutorials": "tutorials/",
 		"verbose": true
 	},
 	"templates": {
