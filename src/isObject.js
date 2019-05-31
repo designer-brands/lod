@@ -1,7 +1,14 @@
 const isObjectOrArray = require("./helpers/isObjectOrArray.js");
 
-module.exports = function isObject (obj) {
+/**
+ * Check if {@link value} is an object.
+ * @param {Any} value - The value to check.
+ * @returns {Boolean}
+*/
+function isObject (value) {
 	return Boolean(
-		isObjectOrArray(obj) && (!Array.isArray(obj))
+		isObjectOrArray(value) && (!Array.isArray(value))
 	);
-};
+}
+
+module.exports = isObject;

@@ -16,7 +16,14 @@ const uniqBy = require("./uniqBy.js");
 
 const isNullOrUndefined = require("./isNullOrUndefined.js");
 
-module.exports = function chain (value) {
+/**
+ * Creates a {@link lod} wrapper instance that wraps {@link value} to support the chaining mechanism.
+ * The result can be accessed by {@link .value()} method. <br/><br/>
+ * See the {@tutorial chaining} tutorial for more details.
+ * @param {Any} value The value to be wrapped for chaining.
+ * @return {Object} The wrapper object for chaining.
+ */
+function chain (value) {
 	let val = value;
 
 	function updateProto (target, source) {
@@ -78,4 +85,6 @@ module.exports = function chain (value) {
 
 	updateProto(result, val);
 	return result;
-};
+}
+
+module.exports = chain;

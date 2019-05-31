@@ -1,18 +1,26 @@
 const isObjectOrArray = require("./isObjectOrArray.js");
 
-module.exports = function set (obj, path, value) {
-	if (!isObjectOrArray(obj)) {
-		return obj;
+/**
+ * Set {@link value} at the {@link path} in the {@link object}.
+ * @param {Object|Array} target The target to set the value.
+ * @param {String} path The path to set the value.
+ * @param {Any} value The value to set.
+ * @return {Object} The passed in {@link object} if it works normally; an empty
+ * object otherwise.
+ */
+function set (target, path, value) {
+	if (!isObjectOrArray(target)) {
+		return target;
 	}
 
 	if ("string" !== typeof path) {
-		obj[path] = value;
+		target[path] = value;
 
-		return obj;
+		return target;
 	}
 
 	let parts = path.split(".");
-	let pointer = obj;
+	let pointer = target;
 
 	let l = parts.length;
 	let lastPart = parts[l - 1];
@@ -33,5 +41,7 @@ module.exports = function set (obj, path, value) {
 
 	pointer[lastPart] = value;
 
-	return obj;
-};
+	return target;
+}
+
+module.exports = set;
