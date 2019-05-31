@@ -14,8 +14,7 @@
 		"pre-commit": "npm-run-all --parallel lint test"
 	},
 	"_moduleAliases": {
-		"@src": "src",
-		"@spec": "spec"
+		"@src": "src"
 	},
 	"repository": {
 		"type": "git",
