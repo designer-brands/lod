@@ -13,6 +13,10 @@
 		"launch-doc": "open docs/index.html",
 		"pre-commit": "npm-run-all --parallel lint test"
 	},
+	"_moduleAliases": {
+		"@src": "src",
+		"@spec": "spec"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+ssh://git@bitbucket.org/jl442741/lod.git"
@@ -35,5 +39,8 @@
 		"npm-run-all": "^4.1.5",
 		"pre-commit": "^1.2.2",
 		"rimraf": "^2.6.3"
+	},
+	"dependencies": {
+		"module-alias": "^2.2.0"
 	}
 }
