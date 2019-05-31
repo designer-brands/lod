@@ -1,4 +1,4 @@
-const defaultToArray = require("../src/defaultToArray.js");
+const defaultToArray = require("@src/defaultToArray.js");
 
 given("defaultToArray method", function () {
 	when("called with a non-array type", function () {

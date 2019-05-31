@@ -1,4 +1,3 @@
-require("module-alias/register");
 const chain = require("./chain.js");
 const debounce = require("./debounce.js");
 const defaultToArray = require("./defaultToArray.js");

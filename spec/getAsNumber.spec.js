@@ -1,4 +1,4 @@
-const getAsNumber = require("../src/getAsNumber.js");
+const getAsNumber = require("@src/getAsNumber.js");
 
 given("getAsNumber method", function () {
 	when("called with a value and a number path", function () {

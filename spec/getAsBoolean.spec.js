@@ -1,4 +1,4 @@
-const getAsBoolean = require("../src/getAsBoolean.js");
+const getAsBoolean = require("@src/getAsBoolean.js");
 
 given("getAsBoolean method", function () {
 	when("called with a value and a string path", function () {

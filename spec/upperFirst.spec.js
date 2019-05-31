@@ -1,4 +1,4 @@
-const upperFirst = require("../src/upperFirst.js");
+const upperFirst = require("@src/upperFirst.js");
 
 given("upperFirst method", function () {
 	when("it is called with non-string types", function () {

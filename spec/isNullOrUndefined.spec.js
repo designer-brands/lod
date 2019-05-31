@@ -1,4 +1,4 @@
-const isNullOrUndefined = require("../src/isNullOrUndefined.js");
+const isNullOrUndefined = require("@src/isNullOrUndefined.js");
 
 given("isNullOrUndefined method", function () {
 	when("it is called with neither null nor undefined", function () {

@@ -1,4 +1,4 @@
-const groupBy = require("../src/groupBy.js");
+const groupBy = require("@src/groupBy.js");
 
 given("groupBy method", function () {
 	when("called with a non-array type as the first argument ", function () {

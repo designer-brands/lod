@@ -1,4 +1,4 @@
-const uniqueId = require("../src/uniqueId.js");
+const uniqueId = require("@src/uniqueId.js");
 
 given("uniqueId method", function () {
 	const generatedIds = new Set();

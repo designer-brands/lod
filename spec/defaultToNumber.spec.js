@@ -1,4 +1,4 @@
-const defaultToNumber = require("../src/defaultToNumber.js");
+const defaultToNumber = require("@src/defaultToNumber.js");
 
 given("defaultToNumber method", function () {
 	when("called with a non-number type", function () {

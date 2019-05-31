@@ -1,4 +1,4 @@
-const getAsObject = require("../src/getAsObject.js");
+const getAsObject = require("@src/getAsObject.js");
 
 given("getAsObject method", function () {
 	when("called with a value and a string path", function () {

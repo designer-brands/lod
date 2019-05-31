@@ -1,4 +1,4 @@
-const defaultToObject = require("../src/defaultToObject.js");
+const defaultToObject = require("@src/defaultToObject.js");
 
 given("defaultToObject method", function () {
 	when("called with a non-object type", function () {

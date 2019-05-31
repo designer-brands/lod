@@ -1,4 +1,4 @@
-const last = require("../src/last.js");
+const last = require("@src/last.js");
 
 given("last method", function () {
 	when("called with a non-array", function () {

@@ -1,4 +1,3 @@
-// const set = require("../../src/helpers/set.js");
 const set = require("@src/helpers/set.js");
 
 given("set method", function () {

@@ -1,4 +1,4 @@
-const chain = require("../src/chain.js");
+const chain = require("@src/chain.js");
 
 given("chain method", function () {
 	when("called with a value", function () {

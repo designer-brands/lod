@@ -1,4 +1,4 @@
-const toCamelCase = require("../src/toCamelCase.js");
+const toCamelCase = require("@src/toCamelCase.js");
 
 given("toCamelCase method", function () {
 	when("called with a space separated string", function () {

@@ -1,4 +1,4 @@
-const getAsArray = require("../src/getAsArray.js");
+const getAsArray = require("@src/getAsArray.js");
 
 given("getAsArray method", function () {
 	when("called with a value and a string path", function () {

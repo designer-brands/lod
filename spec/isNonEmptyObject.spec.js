@@ -1,4 +1,4 @@
-const isNonEmptyObject = require("../src/isNonEmptyObject.js");
+const isNonEmptyObject = require("@src/isNonEmptyObject.js");
 
 given("isNonEmptyObject method", function () {
 	when("called with a non-object type", function () {

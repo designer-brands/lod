@@ -1,4 +1,4 @@
-const uniqBy = require("../src/uniqBy.js");
+const uniqBy = require("@src/uniqBy.js");
 
 given("uniqBy method", function () {
 	when("called with a non-array type as the first argument", function () {

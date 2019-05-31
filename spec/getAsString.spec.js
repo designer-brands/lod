@@ -1,4 +1,4 @@
-const getAsString = require("../src/getAsString.js");
+const getAsString = require("@src/getAsString.js");
 
 given("getAsString method", function () {
 	when("called with a value and a string path", function () {

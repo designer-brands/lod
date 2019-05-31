@@ -1,4 +1,4 @@
-const pick = require("../src/pick.js");
+const pick = require("@src/pick.js");
 
 given("pick method", function () {
 	when("called with a non-object", function () {

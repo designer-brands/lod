@@ -1,4 +1,4 @@
-const isNonEmptyArray = require("../src/isNonEmptyArray.js");
+const isNonEmptyArray = require("@src/isNonEmptyArray.js");
 
 given("isNonEmptyArray method", function () {
 	when("called with a non-array type", function () {

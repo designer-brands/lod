@@ -1,4 +1,4 @@
-const get = require("../src/get.js");
+const get = require("@src/get.js");
 
 given("get method", function () {
 	when("called with null or undefined as the first argument and a path", function () {

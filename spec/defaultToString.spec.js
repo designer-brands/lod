@@ -1,4 +1,4 @@
-const defaultToString = require("../src/defaultToString.js");
+const defaultToString = require("@src/defaultToString.js");
 
 given("defaultToString method", function () {
 	when("called with a non-string type", function () {

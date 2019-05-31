@@ -1,4 +1,4 @@
-const range = require("../src/range.js");
+const range = require("@src/range.js");
 
 given("range method", function () {
 	when("called with non-numerical arguments", function () {

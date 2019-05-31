@@ -1,4 +1,4 @@
-const isObject = require("../src/isObject.js");
+const isObject = require("@src/isObject.js");
 
 given("isObject method", function () {
 	when("called with a non-object type", function () {

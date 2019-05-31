@@ -1,4 +1,4 @@
-const sortBy = require("../src/sortBy.js");
+const sortBy = require("@src/sortBy.js");
 
 given("sortBy method", function () {
 	when("called with a non-array argument", function () {

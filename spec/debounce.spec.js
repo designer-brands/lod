@@ -1,4 +1,4 @@
-const debounce = require("../src/debounce.js");
+const debounce = require("@src/debounce.js");
 
 given("debounce method", function () {
 	when("called with a function fn, and the debounced function is called multiple times", function () {
