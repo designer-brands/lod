@@ -21,8 +21,8 @@ given("groupBy method", function () {
 			);
 
 			expect(result).toEqual({
-				"odd": [3, 21, 5, 3, 1, 1],
-				"even": [34, 2, 4, 2]
+				odd: [3, 21, 5, 3, 1, 1],
+				even: [34, 2, 4, 2]
 			});
 		});
 	});
