@@ -1,6 +1,6 @@
 # lod
 
-A lightweight version of lodash. Unused stuff and 'ash' are removed for simplicity.
+A lightweight version of lodash. Unused stuff and "ash" are removed for simplicity.
 
 ## Development
 
