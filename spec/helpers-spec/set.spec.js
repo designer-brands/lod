@@ -1,4 +1,5 @@
-const set = require("../src/set.js");
+// const set = require("../../src/helpers/set.js");
+const set = require("@src/helpers/set.js");
 
 given("set method", function () {
 	when("called with an argument that is not an array or object", function () {

@@ -113,7 +113,8 @@
 				"then": false
 			},
 			"files": [
-				"spec/*.spec.js"
+				"spec/*.spec.js",
+				"spec/helpers-spec/*.spec.js"
 			]
 		},
 		{

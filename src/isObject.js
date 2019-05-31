@@ -1,4 +1,4 @@
-const isObjectOrArray = require("./isObjectOrArray.js");
+const isObjectOrArray = require("./helpers/isObjectOrArray.js");
 
 module.exports = function isObject (obj) {
 	return Boolean(

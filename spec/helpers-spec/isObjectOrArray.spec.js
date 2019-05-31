@@ -1,4 +1,4 @@
-const isObjectOrArray = require("../src/isObjectOrArray.js");
+const isObjectOrArray = require("@src/helpers/isObjectOrArray.js");
 
 given("isObjectOrArray method", function () {
 	when("called with a non-object and non-array argument", function () {

@@ -1,4 +1,4 @@
-const set = require("./set.js");
+const set = require("./helpers/set.js");
 const isNonEmptyObject = require("./isNonEmptyObject.js");
 const isNullOrUndefined = require("./isNullOrUndefined.js");
 
