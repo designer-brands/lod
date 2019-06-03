@@ -3771,7 +3771,13 @@ range(1, -4, 2); // [1, -1, -3]</code></pre>
 
 <div class="description">
     Sort given array <code>arr</code> based on {@iteratee} and return a new array (shallow copy) so
-that the original array <code>arr</code> is untouched.
+that the original array <code>arr</code> is untouched. <br/><br/>
+
+This method is an exception to the <code>lod</code> philosophy. The reason this method is
+provided is that the native <code>sort()</code> method's compare function has a confusing
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description">api design</a>. In the referenced example, the parameters <code>a</code> and <code>b</code> in <code>compareFunction</code>
+don't have a clear meaning and the values <code>1</code> or <code>-1</code> to be returned are
+magic numbers. It would be much more clear if we use the <a href="global.html#sortBy"><code>sortBy</code></a> in <code>lod</code>.
 </div>
 
 
@@ -4041,7 +4047,7 @@ path in each element if it's a string.</td>
 
 
 <div class="description">
-    Convert {#link str} to camel case.
+    Convert <code>str</code> to camel case.
 </div>
 
 

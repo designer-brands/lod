@@ -60,27 +60,68 @@
 
     <section class="readme">
         <article><h1>lod</h1>
-<p>A lightweight version of lodash. Unused stuff and &quot;ash&quot; are removed for simplicity.</p>
+<h2>Description</h2>
+<p>A lightweight library to replace <code>lodash</code>. Unused stuff and &quot;ash&quot; in <code>lodash</code> are removed for simplicity, while some new methods that don't exist in <code>lodash</code> are added to better fit our own needs.</p>
+<h2>Motive</h2>
+<p><code>Lodash</code> is a well known library with rich functionalities and is currently used throughout our application repositories. However, with a little search and observations, we have only used about 15 methods while the total number is 300+, which means we are only using about 5% of the lodash functionalities, and the vast majority of the code in lodash is not needed but will still be loaded in production and local dev environment.</p>
+<p>In addition, since there are so many features and methods in lodash, developers' understanding of it will vary a lot, some tend to use a certain set of methods while others may prefer a different set, some may take advantage of those less common features while others will rebuild the wheel as they are not aware of those methods, and some may just avoid to use lodash at all. All these lead to a lot of inconsistencies and duplications in the codebase, and is very bad for code quality.</p>
+<p>What's more, lodash may not have certain features we need, and then developers will have to write them on their own, but this can also lead to unreusable code very easily because a of times these written features are just put in a local service or component and so they are not available elsewhere. In addition, other developers probably do not even know they exist.</p>
+<h2>Philosophy</h2>
+<p>Due to these disadvantages, <code>Lod</code> is built with the following philosophies.</p>
+<ol>
+<li>
+<p>It only includes features that are really needed in our project.</p>
+</li>
+<li>
+<p>Unlike <code>lodash</code>, it dvocates the use of native Javascript API whenever it's possible.</p>
+</li>
+</ol>
+<p>In other words, it does not provide aliases or wrappers for native methods if these native methods are already simple and clear enough to use. (One special case is the <a href="global.html#sortBy"><code>sortBy</code></a> method, because the compare function of the native <code>Array.sort()</code> method has a confusing api. For more details see <a href="global.html#sortBy"><code>sortBy</code></a>.)</p>
+<p>These 2 points above will ensure that <code>lod</code> will not get bloated as <code>lodash</code>.</p>
+<ol start="3">
+<li>It includes a few new methods that don't exist in <code>lodash</code> to fit our own needs.</li>
+</ol>
+<p>And if in the future we see certain code or patterns happen again and again through out our repos, we can pull them out with proper abstractions into <code>lod</code> as well. This will make <code>lod</code> evolve and adapt to our projects better and better in the long term.</p>
 <h2>Development</h2>
-<p>When you make changes, you may want to run these scripts often to check for errors.</p>
+<h3>npm scripts</h3>
+<p>You will find these scripts useful during development.</p>
 <ul>
 <li>check js syntax</li>
 </ul>
-<pre class="prettyprint source"><code>npm run lint
+<pre class="prettyprint source lang-bash"><code>npm run lint
 </code></pre>
 <ul>
-<li>run unit test and check coverage</li>
+<li>run unit test and coverage</li>
 </ul>
-<pre class="prettyprint source"><code>npm run test
+<pre class="prettyprint source lang-bash"><code>npm run test
 </code></pre>
-<p>Precommit hook for each commit also runs the above 2 scripts automatically, and if there is any error the commit will be discarded.</p>
+<ul>
+<li>launch coverage report in default browser</li>
+</ul>
+<pre class="prettyprint source lang-bash"><code>npm run launch-coverage
+</code></pre>
+<ul>
+<li>generate documents</li>
+</ul>
+<pre class="prettyprint source lang-bash"><code>npm run doc
+</code></pre>
+<ul>
+<li>generate documents and launch them in default browser</li>
+</ul>
+<pre class="prettyprint source lang-bash"><code>npm run launch-doc
+</code></pre>
+<p>The precommit-hook also automatically runs the <code>lint</code> and <code>test</code> scripts, and if there is any error the commit will be discarded so that bad code cannot get in the repo.</p>
+<h3>Adding a new method</h3>
 <p>If you are adding a new method, make sure it's exposed in index.js and decide if it should also be included in chain.js.</p>
-<p>When you are done with your changes, update changelog.md.</p>
-<p>Then run the script below to rev up the version. Refer to <a href="https://semver.org/">SEMVER</a> to make sure you update the right part of the version.</p>
+<h3>After done with changes</h3>
+<p>When you are done with your changes, make sure lint, unit tests and coverage tests are all passed, and update changelog.md file. Refer to <a href="https://semver.org/">SEMVER</a> to make sure you update the right part of the version. You may also want to launch documents to check if they are updated and aligned to your changes as well. If you have checked everything is fine, create a pull request.</p>
+<h3>After PR is merged</h3>
+<p>After your pull request is merged, switch to master and do a git pull, then run the following script to rev up the version. Refer to <a href="https://semver.org/">SEMVER</a> to make sure you update the right part of the version. This should be consistent with your updates in changelog.md file.</p>
 <pre class="prettyprint source"><code>npm version major|minor|patch
 </code></pre>
-<p>Then do a git push so that all the changes with the new version tag are pushed to remote.</p>
-<p>Finally, open <code>package.json</code> in your <strong>main repo</strong>, find <code>lod</code> entry in <code>dependencies</code>, and update the semver pattern.</p></article>
+<p>Then push all the changes with the new version tag to the remote.</p>
+<h3>Update your main repo</h3>
+<p>Finally, open <code>package.json</code> in your <strong>main repo</strong>, find <code>lod</code> entry in <code>dependencies</code>, and update to the latest semver.</p></article>
     </section>
 
 

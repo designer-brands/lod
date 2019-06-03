@@ -84,7 +84,7 @@ let result = chain(arr)
 </code></pre>
 <p>Note how the current value for each link in the chain is prefilled in the supported methods. When calling <code>.groupBy()</code> the prefilled current value is <code>arr</code>, and when calling <code>getAsNumber()</code> the prefilled current value is <code>{odd: [{val: 1}, {val: 3}], even: [{val: 2}]}</code>.</p>
 <h2>Current Value's Native Methods</h2>
-<p><code>Lod</code> advocates to use Javascript native api's unless there is a really good reason otherwise, so unlike <code>lodash</code> and <code>underscore</code>, it does not provide aliases or wrappers for the built in methods such as <code>Array</code>'s <code>find()</code>, <code>filter()</code> and <code>indexOf()</code> methods, etc. However these methods are still available in chaining for convenience.</p>
+<p><code>Lod</code> advocates to use Javascript native api's unless there is a really good reason otherwise, so unlike <code>lodash</code> and <code>underscore</code>, it does not provide aliases or wrappers for the built in methods such as <code>Array</code>'s <code>find()</code>, <code>filter()</code> and <code>indexOf()</code> methods, etc. However these methods are available in chaining for convenience.</p>
 <h2>Example</h2>
 <pre class="prettyprint source lang-javascript"><code>let a = [{
 	foo: {
