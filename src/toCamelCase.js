@@ -1,5 +1,5 @@
 /**
- * Convert {#link str} to camel case.
+ * Convert {@link str} to camel case.
  * @param {String} str The string to be converted.
  * @return {String}
  * @example
