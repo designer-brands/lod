@@ -4,11 +4,11 @@
 A lightweight library to replace `lodash`. Unused stuff and "ash" in `lodash` are removed for simplicity, while some new methods that don't exist in `lodash` are added to better fit our own needs.
 
 ## Motive
-`Lodash` is a well known library with rich functionalities and is currently used throughout our application repositories. However, we have only used about 15 methods while there are 300+ in total, which means we are only using about 5% of the lodash functionalities, and the vast majority of the code in lodash is not needed but will still be loaded in production and local dev environment.
+`Lodash` is a well known library with rich functionalities and is currently used throughout our application repositories. However, we have only used about 15 methods while there are 300+ in total, which means we are only using about 5% of the `lodash` functionalities, and the vast majority of the code in `lodash` is not needed but will still be loaded in production and local dev environment.
 
-In addition, since there are so many features and methods in lodash, developers' understanding of it will vary a lot, some tend to use a certain set of methods while others may prefer a different set, some may take advantage of those less common features while others will rebuild the wheel as they are not aware of those methods, and some may just avoid to use lodash at all. All these lead to a lot of inconsistencies and duplications in the codebase, and is very bad for code quality.
+In addition, since there are so many features and methods in `lodash`, developers' understanding of it will vary a lot, some tend to use a certain set of methods while others may prefer a different set, some may take advantage of those less common features while others will rebuild the wheel as they are not aware of those methods, and some may just avoid to use `lodash` at all. All these lead to a lot of inconsistencies and duplications in the codebase, and is very bad for code quality.
 
-What's more, lodash may not have certain features we need, and then developers will have to write them on their own, but this can also lead to unreusable code very easily because a of times these written features are just put in a local service or component and so they are not available elsewhere. In addition, other developers probably do not even know they exist.
+What's more, `lodash` may not have certain features we need, and then developers will have to write them on their own, but this can also lead to unreusable code very easily because a of times these written features are just put in a local service or component and so they are not available elsewhere. In addition, other developers probably do not even know they exist.
 
 ## Philosophy
 Due to these disadvantages, `Lod` is built with the following philosophies.
