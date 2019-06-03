@@ -10,7 +10,7 @@
 		"test:coverage": "istanbul check-coverage --statements 100 --branches 100",
 		"launch-coverage": "open coverage/lcov-report/index.html",
 		"doc": "rimraf docs && jsdoc -c jsdoc.json",
-		"launch-doc": "open docs/index.html",
+		"launch-doc": "npm run doc && open docs/index.html",
 		"pre-commit": "npm-run-all --parallel lint test"
 	},
 	"_moduleAliases": {
