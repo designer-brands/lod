@@ -76,8 +76,8 @@ function chain (value) {
 		pick: wrap(pick),
 		sortBy: wrap(sortBy),
 		uniqBy: wrap(uniqBy),
-		invoke: (fn, ...args) => {
-			val = fn(val, ...args);
+		invoke: (fn) => {
+			val = fn(val);
 			return result;
 		},
 		value: () => val

@@ -126,8 +126,7 @@ given("chain method", function () {
 				.getAsArray("a")
 				.uniqBy(tempObj => tempObj.val)
 				.invoke(
-					(tempArr, threshold) => tempArr.filter(element => element.val > threshold),
-					0
+					tempArr => tempArr.filter(element => element.val > 0)
 				)
 				.invoke(tempArr => tempArr.sort((a, b) => a.val > b.val))
 				.getAsObject("0")
