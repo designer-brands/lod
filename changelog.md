@@ -16,3 +16,11 @@
 * Add sortBy() method.
 * Add isNonEmptyArray() method.
 * Add support to native methods of the current value in chaining in order to avoid the use of invoke() method.
+
+## 1.5.0
+* Add documentation and tutorial by jsDoc, add npm script for launching documentation in browser.
+* Add npm script for launching coverage report.
+* Add base url support in unit tests to avoid long "../../../" paths.
+* Refactor code to merge set.js and isObjectOrArray.js to helpers/ folder.
+* Add support of using a key path string for sortBy() method.'
+* Update readme.md to include motives, philosophy and other details.
