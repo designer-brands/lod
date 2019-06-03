@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Tutorial: Chaining - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-chaining.html">Chaining</a></li></ul><h3>Global</h3><ul><li><a href="global.html#chain">chain</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#defaultToArray">defaultToArray</a></li><li><a href="global.html#defaultToNumber">defaultToNumber</a></li><li><a href="global.html#defaultToObject">defaultToObject</a></li><li><a href="global.html#defaultToString">defaultToString</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAsArray">getAsArray</a></li><li><a href="global.html#getAsBoolean">getAsBoolean</a></li><li><a href="global.html#getAsNumber">getAsNumber</a></li><li><a href="global.html#getAsObject">getAsObject</a></li><li><a href="global.html#getAsString">getAsString</a></li><li><a href="global.html#groupBy">groupBy</a></li><li><a href="global.html#isNonEmptyArray">isNonEmptyArray</a></li><li><a href="global.html#isNonEmptyObject">isNonEmptyObject</a></li><li><a href="global.html#isNullOrUndefined">isNullOrUndefined</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#last">last</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#range">range</a></li><li><a href="global.html#sortBy">sortBy</a></li><li><a href="global.html#toCamelCase">toCamelCase</a></li><li><a href="global.html#uniqBy">uniqBy</a></li><li><a href="global.html#uniqueId">uniqueId</a></li><li><a href="global.html#upperFirst">upperFirst</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Tutorial: Chaining</h1>
+    
+
+    <section>
+
+<header>
+    
+
+    <h2>Chaining</h2>
+</header>
+
+<article>
+    <p>The chaining mechanism of <code>lod</code> works in a similar fashion to that of <code>lodash</code> or <code>underscore</code>. You can use the <a href="#Supported-Lod-Methods">Supported Lod Method</a> or the <a href="#Current-Value's-Native-Methods">Current Value's Native Methods</a> for each link in the chain. You can also use the <code>.invoke()</code><a href="#invoke()-Method">method</a> if you want to tap in the chaining flow with your custom function. The final value can be accessed by <code>.value()</code> method.</p>
+<h2>Supported Lod Methods</h2>
+<p>The following 'lod' methods are available to chaining. The first argument of these methods is pre-filled with the current value.</p>
+<ul>
+<li><a href="global.html#defaultToArray"><code>defaultToArray</code></a></li>
+<li><a href="global.html#defaultToNumber"><code>defaultToNumber</code></a></li>
+<li><a href="global.html#defaultToObject"><code>defaultToObject</code></a></li>
+<li><a href="global.html#defaultToString"><code>defaultToString</code></a></li>
+<li><a href="global.html#get"><code>get</code></a></li>
+<li><a href="global.html#getAsArray"><code>getAsArray</code></a></li>
+<li><a href="global.html#getAsBoolean"><code>getAsBoolean</code></a></li>
+<li><a href="global.html#getAsNumber"><code>getAsNumber</code></a></li>
+<li><a href="global.html#getAsObject"><code>getAsObject</code></a></li>
+<li><a href="global.html#getAsString"><code>getAsString</code></a></li>
+<li><a href="global.html#groupBy"><code>groupBy</code></a></li>
+<li><a href="global.html#last"><code>last</code></a></li>
+<li><a href="global.html#pick"><code>pick</code></a></li>
+<li><a href="global.html#sortBy"><code>sortBy</code></a></li>
+<li><a href="global.html#uniqBy"><code>uniqBy</code></a></li>
+</ul>
+<h3>Example</h3>
+<pre class="prettyprint source lang-javascript"><code>let arr = [{
+	val: 1
+}, {
+	val: 2
+}, {
+	val: 3
+}];
+
+let result = chain(arr)
+	.groupBy(element => element.val % 2 ? &quot;odd&quot; : &quot;even&quot;)
+	.getAsNumber(&quot;odd.0.val&quot;)
+	.value();
+
+// result is 1
+</code></pre>
+<p>Note how the current value for each link in the chain is prefilled in the supported methods. When calling <code>.groupBy()</code> the prefilled current value is <code>arr</code>, and when calling <code>getAsNumber()</code> the prefilled current value is <code>{odd: [{val: 1}, {val: 3}], even: [{val: 2}]}</code>.</p>
+<h2>Current Value's Native Methods</h2>
+<p><code>Lod</code> advocates to use Javascript native api's unless there is a really good reason otherwise, so unlike <code>lodash</code> and <code>underscore</code>, it does not provide aliases or wrappers for the built in methods such as <code>Array</code>'s <code>find()</code>, <code>filter()</code> and <code>indexOf()</code> methods, etc. However these methods are still available in chaining for convenience.</p>
+<h2>Example</h2>
+<pre class="prettyprint source lang-javascript"><code>let a = [{
+	foo: {
+		id: &quot;1xx&quot;
+	},
+	value: 1,
+	include: true
+}, {
+	foo: {
+		id: &quot;2xx&quot;
+	},
+	value: 2,
+	include: true
+}, {
+	foo: {
+		id: &quot;3xx&quot;
+	},
+	value: 3,
+	include: false
+}];
+
+let result = chain(a)
+	.filter(obj => obj.include) // .filter() can be used because the current value is an array
+	.find(obj => obj.value > 1) // .find() can be used because the current value is an array
+	.get(&quot;foo.id&quot;)
+	.slice(0, 1) // .slice() can be used because the current value is a string
+	.value();
+
+// result is &quot;2&quot;
+</code></pre>
+<h2>invoke() Method</h2>
+<p>What if neither the <code>supported lod methods</code> nor the <code>current value's native methods</code> can fit my needs? The <code>invoke()</code> method to the rescue! With the <code>invoke()</code> method you can invoke any custom method to tap in the chaining flow, which provides maximal flexibility. In general, though, the <code>supported lod methods</code> and the <code>current value's native methods</code> should be sufficient.</p>
+<p>Let's take the same example above, but here we want to convert the final result to a number instead. We have a few options.</p>
+<pre class="prettyprint source lang-javascript"><code>let result = Number(chain(a)
+	.filter(obj => obj.include)
+	.find(obj => obj.value > 1)
+	.get(&quot;foo.id&quot;)
+	.slice(0, 1)
+	.value());
+</code></pre>
+<p>This works but it is ugly and kind of defeats the whole purpose of chaining.</p>
+<pre class="prettyprint source lang-javascript"><code>let result = chain(a)
+	...
+	.value() - 0;
+</code></pre>
+<p>So is this one, and the <code>-0</code> magic itself may throw someone off.</p>
+<pre class="prettyprint source lang-javascript"><code>let result = chain(a)
+	...
+	.value();
+
+result = Number(result);
+</code></pre>
+<p>This is OK, but wouldn't it be nice if we can also put the type coercing at the end in chaining as well?</p>
+<pre class="prettyprint source lang-javascript"><code>let result = chain(a)
+	...
+	.toNumber()
+	.value();
+
+result = Number(result);
+</code></pre>
+<p>But this won't work as <code>.toNumber()</code> is not a native method for strings in javascript, nor is it a supported lod method. Then what can we do?</p>
+<pre class="prettyprint source lang-javascript"><code>let result = chain(a)
+	...
+	.invoke(str => Number(str))
+	.value();
+
+result = Number(result);
+
+// result is 2
+</code></pre>
+<p>We can use the <code>.invoke()</code> method, it can be used anywhere in the chain any number of times so that your needs can almost always be met.</p>
+</article>
+
+</section>
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>
