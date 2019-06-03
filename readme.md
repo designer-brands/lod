@@ -17,7 +17,7 @@ Due to these disadvantages, `Lod` is built with the following philosophies.
 
 2. Unlike `lodash`, it dvocates the use of native Javascript API whenever it's possible.
 
-In other words, it does not provide aliases or wrappers for native methods if these native methods are already simple and clear enough to use. (One special case is the {@link sortBy} method, because the compare function of the native `Array.sort()` method has a confusing api. For more details see {@link sortBy}.)
+In other words, it does not provide aliases or wrappers for native methods if these native methods are already simple and clear enough to use. One special case is the {@link sortBy} method, because the compare function of the native `Array.sort()` method has a confusing api. For more details see {@link sortBy}.
 
 These 2 points above will ensure that `lod` will not get bloated as `lodash`.
 
