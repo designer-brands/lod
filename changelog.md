@@ -28,4 +28,4 @@
 ## 1.5.1
 * Fix bug that prevents docs/ folder from being git-ignored.
 * Update readme.md to include more descriptions of coding styles and unit tests, and change some other verbiage.
-* Update the description filed in package.json.
+* Update the description field in package.json.
