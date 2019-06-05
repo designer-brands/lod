@@ -15,7 +15,7 @@ Due to these disadvantages, `Lod` is built with the following philosophies.
 
 1. It only includes features that are really needed in our project.
 
-2. Unlike `lodash`, it dvocates the use of native Javascript API whenever it's possible.
+2. Unlike `lodash`, it advocates the use of native Javascript API whenever it's possible.
 
 In other words, it does not provide aliases or wrappers for native methods if these native methods are already simple and clear enough to use. (One special case is the `sortBy` method, because the compare function of the native `Array.sort()` method has a confusing api. See `sortBy` documentation for more details.)
 
