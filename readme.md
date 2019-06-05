@@ -57,19 +57,33 @@ npm run launch-doc
 
 The precommit-hook also automatically runs the `lint` and `test` scripts, and if there is any error the commit will be discarded so that bad code cannot get in the repo.
 
+### Coding styles
+`Lod` uses [eslint](https://https://eslint.org/) to enforce coding styles. It is written in `es6` syntax and `commonjs` modules with a set of eslint rules enabled, see `.eslintrc.json` for more info.
+
+### Unit tests
+Get familiar with the [jasmine test framework](https://jasmine.github.io/index.html) first.
+
+When writing tests, use the `given` `when` `then` gherkin syntax instead of the conventional `describe` `it` `then`. You can also use `fgiven` `fwhen` `fthen` `xgiven` `xwhen` `xthen` in the same way as `fdescribe` `xdescribe` etc., these aliases may help you debug your tests.
+
+You can use `@src` alias in `require()` to refer to the `src/` folder as a base url so that ugly "../../" can be avoided.
+
+Use `checkUndesiredTypes` (take a look at the existing tests as examples) to handle undesired types so that you don't need to reinvent this wheel.
+
 ### Adding a new method
 If you are adding a new method, make sure it's exposed in index.js and decide if it should also be included in chain.js.
 
 ### After done with changes
 When you are done with your changes, make sure lint, unit tests and coverage tests are all passed, and update changelog.md file. Refer to [SEMVER](https://semver.org/) to make sure you update the right part of the version. You may also want to launch documents to check if they are updated and aligned to your changes as well. If you have checked everything is fine, create a pull request.
 
-### After PR is merged
-After your pull request is merged, switch to master and do a git pull, then run the following script to rev up the version. Refer to [SEMVER](https://semver.org/) to make sure you update the right part of the version. This should be consistent with your updates in changelog.md file.
+### Revup your version
+If you need to revup your version, switch to master and do a git pull after your pull request is merged, then run the following script. Refer to [SEMVER](https://semver.org/) to make sure you update the right part of the version. This should be consistent with your updates in changelog.md file.
 ```
 npm version major|minor|patch
 ```
 
 Then push all the changes with the new version tag to the remote.
 
+Not every update needs a revup. You can add the version tag after several pull requests are all merged if it makes sense.
+
 ### Update your main repo
-Finally, open `package.json` in your **main repo**, find `lod` entry in `dependencies`, and update to the latest semver.
+Open `package.json` in your **main repo** which uses `lod` as a dependency, find the `lod` entry in `dependencies`, and update the semver to point to the right version of `lod`.
