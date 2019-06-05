@@ -16,6 +16,7 @@
  * range(1, 4, 2); // [1, 3]
  * range(1, -4, 2); // [1, -1, -3]
 */
+
 function range (start, end, step) {
 	let args = [...arguments];
 
