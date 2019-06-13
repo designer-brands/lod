@@ -15,13 +15,13 @@ given("isNonEmptyArray method", function () {
 
 	when("called with an empty array", function () {
 		then("it should return false", function () {
-			expect(isNonEmptyArray([])).toBeFalsy();
+			expect(isNonEmptyArray([])).toBe(false);
 		});
 	});
 
 	when("called with a non-empty array", function () {
 		then("it should return true", function () {
-			expect(isNonEmptyArray([1])).toBeTruthy();
+			expect(isNonEmptyArray([1])).toBe(true);
 		});
 	});
 });

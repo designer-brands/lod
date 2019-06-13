@@ -15,8 +15,8 @@ given("isObject method", function () {
 
 	when("called with an object", function () {
 		then("it should return true", function () {
-			expect(isObject({})).toBeTruthy();
-			expect(isObject({a: 1})).toBeTruthy();
+			expect(isObject({})).toBe(true);
+			expect(isObject({a: 1})).toBe(true);
 		});
 	});
 });
