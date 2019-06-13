@@ -29,3 +29,9 @@
 * Fix bug that prevents docs/ folder from being git-ignored.
 * Update readme.md to include more descriptions of coding styles and unit tests, and change some other verbiage.
 * Update the description field in package.json.
+
+## 1.5.2
+* Fix a few typos.
+* Update readme.md to be more clear.
+* Avoid toBeTruthy() and toBeFalsy() in unit tests to be more strict.
+* Add more examples for documentation.

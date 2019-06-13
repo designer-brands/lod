@@ -15,9 +15,9 @@ Due to these disadvantages, `Lod` is built with the following philosophies.
 
 1. It only includes features that are really needed in our project.
 
-2. Unlike `lodash`, it advocates the use of native Javascript API whenever it's possible.
+2. Unlike `lodash`, `lod` advocates the use of native Javascript API whenever it's possible.
 
-In other words, it does not provide aliases or wrappers for native methods if these native methods are already simple and clear enough to use. (One special case is the `sortBy` method, because the compare function of the native `Array.sort()` method has a confusing api. See `sortBy` documentation for more details.)
+In other words, `lod` does not provide aliases or wrappers for native methods if these native methods are already simple and clear enough to use. (One special case is the `sortBy` method, because the compare function of the native `Array.sort()` method has a confusing api. See `sortBy` documentation for more details.)
 
 These 2 points above will ensure that `lod` will not get bloated as `lodash`.
 
@@ -35,7 +35,7 @@ You will find these scripts useful during development.
 npm run lint
 ```
 
-* run unit test and coverage
+* run unit tests and coverage
 ```bash
 npm run test
 ```
