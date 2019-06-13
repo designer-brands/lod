@@ -17,12 +17,13 @@ const identity = require("./helpers/identity.js");
  *     value: 1
  * }];
  *
- * // This logs [{
+ * let result = uniqBy(arr, element => element.value);
+ *
+ * // result is [{
  * //     value: 1
  * // }, {
  * //     value: 2
  * // }]
- * console.log(uniqBy(arr, element => element.value));
  */
 
 function uniqBy (arr, iteratee = identity) {

@@ -14,7 +14,7 @@ const identity = require("./helpers/identity.js");
  *     val => val % 2 ? "odd" : "even"
  * );
  *
- * // This logs {
+ * // result should be {
  * //     odd: [3, 21, 5, 3, 1, 1],
  * //     even: [34, 2, 4, 2]
  * // }
