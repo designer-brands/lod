@@ -35,3 +35,8 @@
 * Update readme.md to be more clear.
 * Avoid toBeTruthy() and toBeFalsy() in unit tests to be more strict.
 * Add more examples for documentation.
+
+## 1.5.3
+* Run npm update.
+* Update from eslint 5.x.x to 6.x.x to suppress security vulnerabilities.
+* Replace istanbul with nyc to suppress security vulnerabilities.
