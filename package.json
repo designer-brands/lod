@@ -1,6 +1,6 @@
 {
 	"name": "lod",
-	"version": "1.5.2",
+	"version": "1.5.3",
 	"description": "A lightweight library to replace lodash.",
 	"main": "src/index.js",
 	"scripts": {
