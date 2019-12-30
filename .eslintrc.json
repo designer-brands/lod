@@ -29,6 +29,7 @@
 		"no-useless-concat": "error",
 		"no-useless-return": "error",
 		"no-warning-comments": "error",
+		"no-prototype-builtins": "off",
 		"wrap-iife": "error",
 		"no-restricted-globals": [
 			"error",
